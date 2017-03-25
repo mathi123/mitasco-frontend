@@ -1,0 +1,19 @@
+@import 'colors';
+@import 'globals';
+
+body {
+  background-color: $backgroundColor;
+  margin-top: $topBarHeight;
+}
+
+.body-menu-open-desktop {
+  margin-left: $sideBarWidth;
+}
+
+.header-menu-open {
+  margin-left: -$sideBarWidth;
+}
+
+.modal-menu-open {
+  margin-left: -$sideBarWidth;
+}

@@ -1,0 +1,16 @@
+@import '../../../styles/colors';
+@import '../../../styles/globals';
+
+.header-bar {
+  margin-top: -$topBarHeight;
+  height: $topBarHeight;
+  color: $lightBackGround;
+  border-radius: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+#content {
+  padding-top: 10px;
+}

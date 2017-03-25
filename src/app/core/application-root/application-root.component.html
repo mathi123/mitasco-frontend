@@ -1,0 +1,16 @@
+<div>
+  <modal-placeholder [id]="'default-placeholder'" [menuIsOpen]="menuIsOpen"></modal-placeholder>
+
+  <nav class="header-bar navbar navbar-inverse bg-inverse" [ngClass]="{'header-menu-open':menuIsOpen}">
+    <a class="navbar-brand" (click)="toggleMenu()">
+      <i class="fa fa-bars" aria-hidden="true"> </i>
+      Mitasco
+    </a>
+  </nav>
+
+  <core-menu></core-menu>
+
+  <div id="content" class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

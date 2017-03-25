@@ -1,0 +1,30 @@
+@import '../../../styles/colors';
+@import '../../../styles/globals';
+
+.menu-bar {
+  margin-left: -$sideBarWidth;
+  margin-top: 0;
+  width: $sideBarWidth;
+  padding: 0;
+  position: fixed;
+  height: 100%;
+  background-color: #565656;
+  border-right: 1px solid black;
+
+  nav {
+    //background-color: $darkPrimaryColor;
+    color: #eee;
+  }
+
+  .open {
+    float: left;
+    width: $sideBarWidth;
+    height: 100%;
+    -webkit-transition: width 0.5s linear;
+    transition: width 0.5s linear;
+  }
+
+  .closed {
+    display: none;
+  }
+}
