@@ -47,7 +47,7 @@ export class GroupListComponent implements OnInit {
                 this.records.splice(this.records.indexOf(group), 1);
               } else {
                 // Todo: pass message to global exception logger
-                console.debug("het verwijderen is mislukt");
+                console.debug('het verwijderen is mislukt');
               }
             });
         }

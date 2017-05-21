@@ -3,12 +3,12 @@ import { Headers, RequestOptions } from "@angular/http";
 
 @Injectable()
 export class ConfigurationService {
-  private _baseUrl: string = 'https://localhost:3000';
+  private _baseUrl = 'http://localhost:3000';
   private _headers: Headers = new Headers();
   private _options: RequestOptions = new RequestOptions();
   private _token: string;
-  private _isLoggedIn: boolean = false;
-  public TOKENHEADER: string = 'token';
+  private _isLoggedIn = false;
+  public TOKENHEADER = 'Authorization';
 
   public constructor() {
     this._headers.append('Content-Type', 'application/json');
@@ -20,7 +20,7 @@ export class ConfigurationService {
   }
 
   public getDocumentationUrl(): string {
-    let swaggerUrl = `${this._baseUrl}/documentation/swagger.yml`;
+    const swaggerUrl = `${this._baseUrl}/documentation/swagger.yml`;
     return `${this._baseUrl}/documentation/index.html?url=${encodeURIComponent(swaggerUrl)}#/default`;
   }
 
@@ -29,7 +29,8 @@ export class ConfigurationService {
   }
 
   public setToken(token: string) {
-    console.log("token was received");
+    console.log('token was received');
+    console.log(token);
     this._token = token;
     this.addTokenToHeaders();
     this._isLoggedIn = true;

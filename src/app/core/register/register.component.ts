@@ -3,9 +3,6 @@ import { ConfigurationService } from "../../server-api/configuration.service";
 import { Router } from "@angular/router";
 import { UserService } from "../../server-api/user.service";
 import { User } from "../../shared/user";
-import { AuthenticationService } from "../../server-api/authentication.service";
-import { Credentials } from "../../shared/credentials";
-import { LoginResult } from "../../shared/login-result";
 
 @Component({
   selector: 'core-register',
@@ -25,7 +22,7 @@ export class RegisterComponent implements OnInit {
   public password2IsValid = false;
 
   constructor(private config: ConfigurationService, private router: Router,
-              private service: UserService, private authenticationService: AuthenticationService) {
+              private service: UserService) {
   }
 
   ngOnInit() {
@@ -44,19 +41,6 @@ export class RegisterComponent implements OnInit {
   }
 
   private login(email: string, password: string) {
-    const credentials = new Credentials();
-    credentials.email = email;
-    credentials.password = password;
-
-    this.authenticationService.Authenticate(credentials)
-      .then((loginResult: LoginResult) => {
-        if (loginResult) {
-          this.router.navigate(['dashboard']);
-        } else {
-          console.log('error!');
-        }
-      })
-      .catch(() => console.log('error!'));
   }
 
   public change() {
